@@ -49,4 +49,9 @@ def cartoonify(ImagePath):
     def save(Resized6, ImagePath):
         newname = "cartoonified_Image"
         path1 = os.path.dirname(ImagePath)
-        extensions = os.path.splitext()
+        extensions = os.path.splitext(ImagePath)[1]
+        path2 = os.path.join(path1, newname + extensions)
+        cv2.imwrite(path, cv2.cvtColor(Resized6, cv2.COLOR_RGB2BGR))
+        I = "Image saved by name" + newname + "at " + path
+        tk.messageBox.showinfo(title=None, message=I)
+        

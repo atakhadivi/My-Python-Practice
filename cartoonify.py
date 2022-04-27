@@ -39,3 +39,14 @@ def cartoonify(ImagePath):
     cartoonImage = cv2.bitwise_and(colorImage, colorImage, mask=getEdge)
     Resized6 = cv2.resize(cartoonImage, (960, 540))
     
+    images=[Resized1,Resized2,Resized3,Resized4,Resized5,Resized6]
+    fig, axes = plt.subplots(3,2 , figsize=(8,8), subplot_kw = {'xticks': [], 'yticks':[]}, gridspec_kw=dict(hspace=0.1, wspace=0.1))
+    for i, ax in enumerate(axes.flat):
+        ax.imshow(images[i], cmap='gray')
+        
+    plt.show()
+    
+    def save(Resized6, ImagePath):
+        newname = "cartoonified_Image"
+        path1 = os.path.dirname(ImagePath)
+        extensions = os.path.splitext()

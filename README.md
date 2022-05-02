@@ -2,3 +2,4 @@
 
 # Hangman Game
 # rock paper scissors
+# Email slicer
